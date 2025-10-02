@@ -1,0 +1,69 @@
+@import '../../assets/styles/scss/foundation/foundation-settings';
+@import '../../assets/styles/scss/global/sass-variables';
+@import '../../assets/styles/scss/global/mixins';
+
+/* Front-end Styles */
+:root {
+    --accordion-editor-color: #FE9D2B;
+}
+.accordion-section  {
+    $this: &;
+    &__container {
+        padding-bottom: 0 $i;
+    }
+    &.has-background {
+        #{$this}__container {
+            padding-top: var(--global-spacing, var(--renoun-section-padding) );
+        }
+    }
+
+    &.alignleft, &.aligncenter, &.alignright {
+        float: none $i;
+        // margin: initial;
+        margin-top: initial;
+        margin-bottom: initial;
+        margin-left: auto $i;
+        margin-right: auto $i;
+    }
+}
+/* Editor-specific Styles */
+.editor-styles-wrapper {
+
+    .wp-block-ecostar-es-accordion-section {
+        display: block;
+        min-height: 2rem;
+        border: 1px solid var(--accordion-editor-color);
+        .accordion-section {
+            position: relative;
+            padding-top: 18px;
+            &:before {
+                content: 'Accordion Section: ' attr(data-section-name); // attr(data-accordion-name);
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 18px;
+                background-color: var(--accordion-editor-color);
+                color: black;
+                font-size: 14px;
+            }
+        }
+        &:focus {
+            border: none;
+        }
+        &:hover, &:focus {
+            position: relative;
+            .selector {
+                // display: block $i;
+            }
+        }
+        .accordion-section-innerblocks {
+            display: flex;
+            flex-flow: row wrap;
+            margin-left: auto $i;
+            margin-right: auto $i;
+            max-width: var(--wp--style--global--content-size);
+            width: 100%;
+        }
+
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "renounchild/block-accordion-section",
+  "title": "Block Accordion Section",
+  "description": "",
+  "style": ["file:./block-accordion-section.css"],
+  "script": ["file:./block-accordion-section.js"],
+  "category": "theme",
+  "icon": "",
+  "keywords": ["renounchild", "accordion", "section"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block-accordion-section.php"
+  },
+  "supports": {
+    "align": ["wide", "full", "left", "center", "right"],
+    "anchor": true,
+    "alignContent": true,
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "color": {
+      "text": false,
+      "background": true,
+      "gradients": true,
+      "link": false
+    },
+    "alignText": false,
+    "dimensions": {
+      "minHeight": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": false,
+      "fontSize": false
+    },
+    "fullHeight": false,
+    "inserter": true,
+    "reusable": false
+  },
+  "parent": ["renounchild/block-accordion"],
+  "providesContext": ["acf/fields"],
+  "usesContext": ["acf/fields"]
+}

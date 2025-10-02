@@ -1,0 +1,72 @@
+@import '../../assets/styles/scss/foundation/foundation-settings';
+@import '../../assets/styles/scss/global/sass-variables';
+@import '../../assets/styles/scss/global/mixins';
+
+/* Front-end Styles */
+:root {
+    --es-tabs-border-radius: 99px;
+}
+.block-accordion {
+    $this: &;
+    @include tabs-reset;
+    ul.accordion {
+        background-color: transparent;
+        &, * {
+            border: none $i;
+        }
+        li.accordion-item {
+            margin-bottom: 0.25rem;
+            border-radius: .5rem;
+            background-color: $white;
+            overflow: hidden;
+            .accordion-title {
+                padding-left: $global-margin;
+                padding-right: 4rem;
+                font-size: rem-calc(24);
+                color: $black;
+                text-decoration: none;
+                &:before {
+                    content: url("data:image/svg+xml,%3Csvg width='27' height='17' viewBox='0 0 27 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.89052 2.22353C2.41122 1.70283 3.25544 1.70283 3.77614 2.22353L13.5 11.9474L23.2239 2.22353C23.7446 1.70283 24.5888 1.70283 25.1095 2.22353C25.6302 2.74423 25.6302 3.58845 25.1095 4.10915L14.4428 14.7758C13.9221 15.2965 13.0779 15.2965 12.5572 14.7758L1.89052 4.10915C1.36983 3.58845 1.36983 2.74423 1.89052 2.22353Z' fill='%23FE9D2B' stroke='%23FE9D2B' stroke-width='2.66667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    transform: rotate(0deg);
+                    transition: transform .25s ease-out;
+                }
+                &:hover, &:focus {
+                    background-color: $white;
+                }
+            }
+            .accordion-content {
+                padding: 0;
+                .row {
+                    margin: 0;
+                    padding-top: 1rem;
+                }
+            }
+            &.is-active {
+                .accordion-title {
+                    &:before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+/* Editor-specific Styles */
+.editor-styles-wrapper {
+    .wp-block-ecostar-es-accordion {
+        position: relative;
+        padding-top: 18px;
+        &:before {
+            content: 'Accordion'; // attr(data-accordion-name);
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 18px;
+            background-color: var(--accordion-editor-color);
+            color: black;
+            font-size: 14px;
+        }
+    }
+}

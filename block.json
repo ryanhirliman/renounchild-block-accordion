@@ -1,0 +1,26 @@
+{
+    "name": "renounchild/block-accordion",
+    "title": "Block Accordion",
+    "description": "Add an accordion container.",
+    "style": ["file:./block-accordion.css"],
+    "script": ["jquery", "file:./block-accordion.js"],
+    "category": "layout",
+    "icon": "",
+    "keywords": ["renounchild", "block-accordion"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-accordion.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignText": false,
+        "typography": {
+            "lineHeight": false,
+            "fontSize": false
+        },
+        "fullHeight": false
+    },
+    "providesContext": ["acf/fields"],
+    "usesContext": ["acf/fields"]
+}
